@@ -33,7 +33,7 @@ RSpec.describe "welcome index page" do
 
       expect(page).to have_button("Create a New User")
       click_button("Create a New User")
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(register_path)
     end
   end
 end
