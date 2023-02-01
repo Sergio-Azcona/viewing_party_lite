@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
   end
@@ -16,6 +17,10 @@ class UsersController < ApplicationController
       flash.notice = @user.errors.full_messages.to_sentence
       render :new
     end
+  end
+
+  def discover
+    
   end
 
 
