@@ -8,8 +8,9 @@ RSpec.describe "New User Creation page" do
       visit(register_path) 
 
       expect(page).to have_content('Register a New user')
-
-      expect(page).to have_field
+      expect(page).to field_labeled("Name")
+      expect(page).to field_labeled("Email")
+      expect(page).to have_button("Create New User")
     end
   end
 end
