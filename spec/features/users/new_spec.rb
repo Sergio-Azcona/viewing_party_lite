@@ -20,7 +20,7 @@ RSpec.describe "New User Creation page" do
       fill_in(:email, with: "cball@gogo.com")
       
       click_button("Create New User")
-      expect(current_path).to eq("/users/1")
+      expect(current_path).to eq("/users/#{User.last.id}")
       expect(page).to have_content("Update Successful")
     end
 
@@ -31,7 +31,6 @@ RSpec.describe "New User Creation page" do
           fill_in(:email, with: "cball@gogo.com")
           
           click_button("Create New User")
-          expect(current_path).to_not eq("/users/1")
           expect(current_path).to eq(users_path) 
           # save_and_open_page
           expect(page).to have_content("Name can't be blank")
