@@ -1,1 +1,12 @@
 <h2 style="font-family:courier; text-align:center; color: MAROON">Register a New user</h2>
+
+<h2 style=" text-align:center"> 
+  <ul style="list-style: none;">
+    <%= form_with url: users_path, method: :post, local: true do |f| %> 
+      <li><%=f.label :name, "Name" %>
+      <%=f.text_field :name, value: @user.name %></li>
+      <li><%=f.label :email, "Email" %>
+      <%=f.text_field :email, value: @user.email %></li>
+     <li><%= f.submit "Create New User" %></li>
+    <% end %>
+</h2>
