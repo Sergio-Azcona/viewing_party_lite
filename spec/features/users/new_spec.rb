@@ -48,7 +48,7 @@ RSpec.describe "New User Creation page" do
           fill_in(:name, with: "Chase Ball")
           fill_in(:email, with: "cball@gogo.com")
           click_button("Create New User")
-# require 'pry';binding.pry
+          
           expect(current_path).to eq("/users/#{User.last.id}")
 
           visit(register_path) 
