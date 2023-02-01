@@ -6,6 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = FactoryBot.create(:user)
-user2 = FactoryBot.create(:user)
-user3 = FactoryBot.create(:user)
+FactoryBot.create_list(:user, 6)

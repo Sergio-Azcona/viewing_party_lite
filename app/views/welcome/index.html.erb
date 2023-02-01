@@ -1,0 +1,10 @@
+<h3 style="text-align:center;"><%= button_to "Create a New User", register_path, method: :get %></h3>
+<br>
+<div id="existing_users">
+  <h2 style="font-family:courier; text-align:center; color: MAROON">Existing Users</h2>
+    <ul style="list-style: none;">
+      <% @users.each do |user| %>
+        <li><center><h4><%= link_to "#{user.name}", user_path(user) %></h4></center></li>
+      <% end %>
+    </ul>
+</div>
