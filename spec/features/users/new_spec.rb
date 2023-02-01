@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "New User Creation page" do
   before(:each)do 
+    User.delete_all
+
     visit(register_path) 
   end
 
@@ -23,7 +25,7 @@ RSpec.describe "New User Creation page" do
     end
 
     describe 'user is routed back to the create page until form is completed or email is not unique' do
-      describe 'values previously filled in fields displays and page has a flash unsuccessful message' do
+      describe 'values previously filled in fields displays and page has a flash unsuccessful message' do        
         it 'routes to user dashboard when form is complete' do
           fill_in(:name, with: "")
           fill_in(:email, with: "cball@gogo.com")
@@ -39,15 +41,16 @@ RSpec.describe "New User Creation page" do
           fill_in(:name, with: "Chase Ball")
           click_button("Create New User")
           expect(current_path).to_not eq(register_path) 
-          expect(current_path).to eq("/users/1")
+          expect(current_path).to eq("/users/#{User.last.id}")
         end
 
         it 'routes user to dashboard when email is unique' do
+          
           fill_in(:name, with: "Chase Ball")
           fill_in(:email, with: "cball@gogo.com")
-          
           click_button("Create New User")
-          expect(current_path).to eq("/users/2")
+# require 'pry';binding.pry
+          expect(current_path).to eq("/users/#{User.last.id}")
 
           visit(register_path) 
           fill_in(:name, with: "Mr. Ball Sr.")
@@ -59,8 +62,8 @@ RSpec.describe "New User Creation page" do
 
           fill_in(:email, with: "cballsr@gogo.com")
           click_button("Create New User")
-          
-          expect(current_path).to eq("/users/3")
+          # require 'pry';binding.pry          
+          expect(current_path).to eq("/users/#{User.last.id}")
         end
 
       end
