@@ -1,0 +1,9 @@
+      
+ <div id="existing_users">
+    <ul style="list-style: none;">
+      <% @top_rated_movies.each do |movie| %>
+      <% binding.pry %>
+        <li><center><h4><%= movie.title %> &nbsp &nbsp <%= movie.vote_average %> </h4></center></li>
+      <% end %>
+    </ul>
+</div>

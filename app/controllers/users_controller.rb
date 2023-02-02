@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def discover
+    # require 'pry';binding.pry
+    @top_rated_movies = MovieFacade.top_rated    
+  end
+
+  def movies
+    @top_rated_movies = MovieFacade.top_rated
+
+  end
 
   private
   def user_params
