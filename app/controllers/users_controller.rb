@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
   end
@@ -7,7 +6,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
   def create
     @user = User.create(user_params)
     if @user.save
@@ -20,9 +18,12 @@ class UsersController < ApplicationController
   end
 
   def discover
-    
+    @user = User.find(params[:id])   
   end
 
+  # def movies
+  #   @top_rated_movies = MovieFacade.top_rated
+  # end
 
   private
   def user_params

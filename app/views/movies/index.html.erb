@@ -1,0 +1,10 @@
+<center><%= button_to 'Discover Movies', discover_user_path(@user.id), method: :get %></center>
+
+
+    <ul style="list-style: none;">
+      <% @top_rated_movies.each do |movie| %>
+        <div id="movie-<%= movie.id %>">
+          <li><center><h4><%= movie.title%> &nbsp &nbsp Vote Average: <%= movie.vote_average%> </h4></center></li>
+        </div>
+      <% end %>
+    </ul>
