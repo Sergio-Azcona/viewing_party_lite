@@ -6,5 +6,4 @@ class MovieFacade
       TopMovie.new(top_movie_data)
     end
   end
-
 end
