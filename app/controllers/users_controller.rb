@@ -21,9 +21,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])   
   end
 
-  def movies
-    @top_rated_movies = MovieFacade.top_rated
-  end
+  # def movies
+  #   @top_rated_movies = MovieFacade.top_rated
+  # end
 
   private
   def user_params
