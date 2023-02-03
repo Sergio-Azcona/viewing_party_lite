@@ -6,4 +6,9 @@ class MovieFacade
       TopMovie.new(top_movie_data)
     end
   end
+
+  def self.movie_data(id)
+    movie_data = MovieService.get_movie(id)
+    Movie.new(movie_data)
+  end
 end
