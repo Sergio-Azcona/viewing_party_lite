@@ -18,13 +18,11 @@ class UsersController < ApplicationController
   end
 
   def discover
-    # require 'pry';binding.pry
     @user = User.find(params[:id])   
   end
 
   def movies
     @top_rated_movies = MovieFacade.top_rated
-
   end
 
   private
