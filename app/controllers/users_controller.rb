@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def discover
     # require 'pry';binding.pry
-    @top_rated_movies = MovieFacade.top_rated    
+    @user = User.find(params[:id])   
   end
 
   def movies
