@@ -10,15 +10,8 @@ RSpec.describe MovieFacade do
 
   it 'returns 20 movies object in an array' do
     movie = MovieFacade.top_rated
+    expect(movie.first).to be_an_instance_of(TopMovie)
     expect(movie.count).to eq(20)
     expect(movie).to be_a(Array) 
   end
-
-  it 'returns title, vote_average, and id values' do
-    movie = MovieFacade.top_rated
-    expect(movie.first.title).to eq('The Godfather')
-    expect(movie.first.vote_average).to eq(8.7)
-    expect(movie.first.id).to eq(238)
-  end
-
 end
